@@ -28,7 +28,7 @@ KnowledgeBase.belongsTo(User, { foreignKey: 'contributor_id' });
 User.hasMany(KnowledgeBase, { foreignKey: 'contributor_id' });
 
 // Sync database
-sequelize.sync({ force: true }).then(() => {
+sequelize.sync({  alter: true }).then(() => {
   console.log('Database & tables created!');
 });
 
