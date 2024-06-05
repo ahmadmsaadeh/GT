@@ -2,6 +2,7 @@ const express = require('express');
 const { getAllResources, getResourceByID } = require('./controllers/resourceController');
 const { getAllKnowledgeBases, getKnowledgeBasesById, addKnowledgeBases, DeleteKnowledge, UpdateKnowledge } = require('./controllers/knowledgebasesController');
 const { getAllLocalPartnership, getPartnershipById, addPartnership, DeletePartnership, UpdatePartnership } = require('./controllers/localpartnershipsController');
+const { getGardenSoilData } = require('./controllers/SoilAndPestMgmt');
 const sequelize = require('./database');
 const { User, Resource } = require('./models');
 
@@ -41,6 +42,8 @@ app.get('/PartnershipById', getPartnershipById);
 app.post('/AddPartnership', addPartnership);
 app.post('/DeletePartnership', DeletePartnership);
 app.post('/UpdatePartnership', UpdatePartnership);
+/////////////////////////////////////////////////////////
+app.get('/getGardenSoilData', getGardenSoilData);
 
 app.listen(port, async () => {
     console.log(`App listening on port ${port} ...`);
