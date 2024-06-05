@@ -1,8 +1,8 @@
 const Resource = require('../models/Resource');
 
-exports.getAllResources = async (req, res) => {
+exports.getAllResources = async(req, res) => {
     try {
-        const resources = await Resource.findAll();
+        const resources =  await Resource.findAll();
         res.status(200).json({
             status: 'success',
             results: resources.length,
@@ -19,6 +19,7 @@ exports.getAllResources = async (req, res) => {
 exports.getResourceByID = async (req, res) => {
     try {
         const id = req.params.id;
+        console.log(`id is ${id}`);
         const resource = await Resource.findByPk(id);
         if (!resource) {
             return res.status(404).json({
@@ -37,3 +38,47 @@ exports.getResourceByID = async (req, res) => {
         res.status(500).send("Internal Server Error");
     }
 };
+
+exports.addNewResource = async (req, res) => {
+    try {
+        const { name, type, quantity, available_from } = req.body;
+        const newResource = await Resource.create({
+            name,
+            type,
+            quantity,
+            available_from
+        });
+
+        res.status(201).json({ 
+            message: 'Resource added successfully.', 
+            resource: newResource 
+        });
+    } catch (error) {
+        console.error("Error adding new resource:", error);
+        res.status(500).send("Internal Server Error");
+    }
+};
+
+exports.deleteResource = async (req,res) => {
+    try{
+        const id = req.params.id;
+        console.log(`id is ${id}`);
+        const resource = await Resource.findByPk(id);
+        if (!resource) {
+            return res.status(404).json({
+                status: 'fail',
+                message: 'Resource not found'
+            });
+        }
+
+        await resource.destroy();
+
+        res.status(200).json({
+            status: 'success',
+            message: 'Resource deleted successfully'
+        });
+    } catch (error) {
+        console.error("Error deleting resource:", error);
+        res.status(500).send("Internal Server Error");
+    }
+}

@@ -11,6 +11,7 @@ const KnowledgeBase = require('./KnowledgeBase');
 const LocalPartnership = require('./LocalPartnership');
 const UserRole = require('./UserRole');
 
+
 // Define relationships
 User.hasMany(GardenMembership, { foreignKey: 'user_id' });
 GardenMembership.belongsTo(User, { foreignKey: 'user_id' });
@@ -28,7 +29,7 @@ KnowledgeBase.belongsTo(User, { foreignKey: 'contributor_id' });
 User.hasMany(KnowledgeBase, { foreignKey: 'contributor_id' });
 
 // Sync database
-sequelize.sync({ force: true }).then(() => {
+sequelize.sync({ alter: true }).then(() => {
   console.log('Database & tables created!');
 });
 
