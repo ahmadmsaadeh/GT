@@ -4,7 +4,7 @@ const bodyParser = require('body-parser');
 const sequelize = require('../database');
 
 // Get all crops
-router.get('/لardenMembership', (req, res) => {
+router.get('/GardenMembership', (req, res) => {
     db.query('SELECT * FROM gardenmemberships', (err, results) => {
         if (err) {
             console.error('Error fetching gardenmemberships:', err);
