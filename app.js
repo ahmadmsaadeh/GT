@@ -1,7 +1,9 @@
 const express = require('express');
-const { getAllResources, getResourceByID, addNewResource, deleteResource } = require('./controllers/resourceController');
 const sequelize = require('./database');
 const models = require('./models');
+const resourceRouts = require('./routs/resourcesRouts');
+const volunteerRouts = require('./routs/volunteersRouts');
+
 
 const app = express();
 const port = 3000;
@@ -26,11 +28,9 @@ app.get('/', async (req, res) => {
     }
 });
 
-// Routes for resources
-app.get('/Resources', getAllResources);
-app.get('/Resources/:id', getResourceByID);
-app.post('/Resources', addNewResource);
-app.delete('/Resources/:id', deleteResource);
+app.use('/Resources', resourceRouts);
+app.use('/Volunteers', volunteerRouts);
+
 
 app.listen(port, async () => {
     console.log(`App listening on port ${port} ...`);
