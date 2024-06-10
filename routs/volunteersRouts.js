@@ -11,6 +11,7 @@ router
 router
 .route('/:id')
 .get(volunteersController.getVolunteerByID)
-.delete(volunteersController.deleteVolunteer);
+.delete(volunteersController.deleteVolunteer)
+.patch(volunteersController.updateVolanteerByID);
 
 module.exports = router;

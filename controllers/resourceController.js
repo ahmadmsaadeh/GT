@@ -82,3 +82,36 @@ exports.deleteResource = async (req,res) => {
         res.status(500).send("Internal Server Error");
     }
 }
+
+exports.updateResourceByID = async (req, res) => {
+    try {
+        const id = req.params.id;
+        const { name, type, quantity, available_from } = req.body;
+
+        const resource = await Resource.findByPk(id);
+        if (!resource) {
+            return res.status(404).json({
+                status: 'fail',
+                message: 'Resource not found'
+            });
+        }
+
+        await resource.update({
+            name: name || resource.name,
+            type: type || resource.type,
+            quantity: quantity || resource.quantity,
+            available_from: available_from || resource.available_from
+        });
+
+        res.status(200).json({
+            status: 'success',
+            message: 'Resource updated successfully',
+            data: {
+                resource
+            }
+        });
+    } catch (error) {
+        console.error("Error updating resource:", error);
+        res.status(500).send("Internal Server Error");
+    }
+};

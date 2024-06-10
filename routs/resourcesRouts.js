@@ -11,5 +11,7 @@ router
 router
 .route('/:id')
 .get(resourceController.getResourceByID)
-.delete(resourceController.deleteResource);
+.delete(resourceController.deleteResource)
+.patch(resourceController.updateResourceByID);
+
 module.exports = router;
