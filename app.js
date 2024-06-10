@@ -3,6 +3,8 @@ const sequelize = require('./database');
 const models = require('./models');
 const resourceRouts = require('./routs/resourcesRouts');
 const volunteerRouts = require('./routs/volunteersRouts');
+const weatherRouter = require('./routs/weatherRouter');
+
 
 
 const app = express();
@@ -28,9 +30,10 @@ app.get('/', async (req, res) => {
     }
 });
 
+
+app.use('/Weather', weatherRouter);
 app.use('/Resources', resourceRouts);
 app.use('/Volunteers', volunteerRouts);
-
 
 app.listen(port, async () => {
     console.log(`App listening on port ${port} ...`);
