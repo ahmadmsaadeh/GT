@@ -1,18 +1,19 @@
 const express = require('express');
 const sequelize = require('./database');
 const models = require('./models');
-const resourceRouts = require('./routs/resourcesRouts');
-const volunteerRouts = require('./routs/volunteersRouts');
-const weatherRouter = require('./routs/weatherRouter');
-const usersRouter = require('./routs/users');
-const userrolesRouter = require('./routs/usersroles');
-const GardenMembershipRouter = require('./routs/GardenMembership');
-const { getAllKnowledgeBases, getKnowledgeBasesById, addKnowledgeBases, DeleteKnowledge, UpdateKnowledge } = require('./controllers/knowledgebasesController');
-const { getAllLocalPartnership, getPartnershipById, addPartnership, DeletePartnership, UpdatePartnership } = require('./controllers/localpartnershipsController');
-const { getGardenSoilData } = require('./controllers/SoilAndPestMgmt');
-
-
+const resourceRouts = require('./routes/resourcesRouts');
+const volunteerRouts = require('./routes/volunteersRouts');
+const weatherRouter = require('./routes/weatherRouter');
+const usersRouter = require('./routes/users');
+const userrolesRouter = require('./routes/usersroles');
+const GardenMembershipRouter = require('./routes/GardenMembership');
+const LocalPartnershipRoutes = require('./routes/LocalPartnershipRoutes');
+const KnowledgeBaseRoutes = require('./routes/KnowledgeBaseRoutes');
+const soilAndCropRoutes = require('./routes/soilAndCropRoutes');
 const app = express();
+const bodyParser = require('body-parser');
+
+
 const port = 3000;
 
 // Middleware to add request time
@@ -35,28 +36,16 @@ app.get('/', async (req, res) => {
     }
 });
 
-
-app.use('/Weather', weatherRouter);
-app.use('/Resources', resourceRouts);
-app.use('/Volunteers', volunteerRouts);
-app.use('/users', usersRouter);
-app.use('/usersroles', userrolesRouter);
-app.use('/GardenMembership', GardenMembershipRouter);
-///////////////////////////////////////////////////////////////
-app.get('/KnowledgeBases', getAllKnowledgeBases);
-app.get('/KnowledgeBasesById', getKnowledgeBasesById);
-app.post('/AddKnowledge', addKnowledgeBases);
-app.post('/DeleteKnowledge', DeleteKnowledge);
-app.post('/UpdateKnowledge', UpdateKnowledge);
-//////////////////////////////////////////////////////////
-app.get('/LocalPartnerships', getAllLocalPartnership);
-app.get('/PartnershipById', getPartnershipById);
-app.post('/AddPartnership', addPartnership);
-app.post('/DeletePartnership', DeletePartnership);
-app.post('/UpdatePartnership', UpdatePartnership);
-/////////////////////////////////////////////////////////
-app.get('/getGardenSoilData', getGardenSoilData);
-
+app.use(bodyParser.json());
+app.use('/api/Weather', weatherRouter);
+app.use('/api/Resources', resourceRouts);
+app.use('/api/Volunteers', volunteerRouts);
+app.use('/api/users', usersRouter);
+app.use('/api/usersroles', userrolesRouter);
+app.use('/api/GardenMembership', GardenMembershipRouter);
+app.use('/api', LocalPartnershipRoutes);
+app.use('/api', KnowledgeBaseRoutes);
+app.use('/api', soilAndCropRoutes);
 
 app.listen(port, async () => {
     console.log(`App listening on port ${port} ...`);

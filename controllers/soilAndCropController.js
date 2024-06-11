@@ -1,8 +1,8 @@
- const axios = require('axios');
- const Garden = require('../models/Garden');
- const Crop = require('../models/Crop');
+const axios = require('axios');
+const Garden = require('../models/Garden');
+const Crop = require('../models/Crop');
 
- const getCropData = async (cropName) => {
+const getCropData = async (cropName) => {
     const url = `https://openfarm.cc/api/v1/crops/?filter=${cropName}`;
     try {
         const response = await axios.get(url);
@@ -41,7 +41,7 @@ const getGardenSoilAndCropData = async (gardenId) => {
 };
 
 exports.getGardenSoilData = async (req, res) => {
-    const {gardenId} = req.body;
+    const { gardenId } = req.body;
     try {
         const data = await getGardenSoilAndCropData(gardenId);
         res.status(200).json({
