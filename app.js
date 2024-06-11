@@ -6,7 +6,7 @@ const volunteerRouts = require('./routes/volunteersRouts');
 const weatherRouter = require('./routes/weatherRouter');
 const usersRouter = require('./routes/users');
 const userrolesRouter = require('./routes/usersroles');
-const GardenMembershipRouter = require('./routes/GardenMembership');
+const gardenMembershipRoutes = require('./routes/gardenMembershipRoutes');
 const LocalPartnershipRoutes = require('./routes/LocalPartnershipRoutes');
 const KnowledgeBaseRoutes = require('./routes/KnowledgeBaseRoutes');
 const soilAndCropRoutes = require('./routes/soilAndCropRoutes');
@@ -25,24 +25,13 @@ app.use((req, res, next) => {
 // Middleware to parse JSON bodies
 app.use(express.json());
 
-// Route to get all users
-app.get('/', async (req, res) => {
-    try {
-        const users = await models.User.findAll();
-        res.json(users);
-    } catch (error) {
-        console.error("Error fetching users:", error);
-        res.status(500).send("Internal Server Error");
-    }
-});
-
 app.use(bodyParser.json());
 app.use('/api/Weather', weatherRouter);
 app.use('/api/Resources', resourceRouts);
 app.use('/api/Volunteers', volunteerRouts);
 app.use('/api/users', usersRouter);
 app.use('/api/usersroles', userrolesRouter);
-app.use('/api/GardenMembership', GardenMembershipRouter);
+app.use('/api/gardenMembership', gardenMembershipRoutes);
 app.use('/api', LocalPartnershipRoutes);
 app.use('/api', KnowledgeBaseRoutes);
 app.use('/api', soilAndCropRoutes);
