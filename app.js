@@ -1,15 +1,9 @@
 const express = require('express');
 const sequelize = require('./database');
-const models = require('./models');
-const resourceRouts = require('./routs/resourcesRouts');
-const volunteerRouts = require('./routs/volunteersRouts');
-const weatherRouter = require('./routs/weatherRouter');
-const usersRouter = require('./routs/users');
-const userrolesRouter = require('./routs/usersroles');
-const GardenMembershipRouter = require('./routs/GardenMembership');
-
-
 const app = express();
+const bodyParser = require('body-parser');
+const routes = require('./routes/index');
+
 const port = 3000;
 
 // Middleware to add request time
@@ -20,26 +14,9 @@ app.use((req, res, next) => {
 
 // Middleware to parse JSON bodies
 app.use(express.json());
+app.use(bodyParser.json());
 
-// Route to get all users
-app.get('/', async (req, res) => {
-    try {
-        const users = await models.User.findAll();
-        res.json(users);
-    } catch (error) {
-        console.error("Error fetching users:", error);
-        res.status(500).send("Internal Server Error");
-    }
-});
-
-
-app.use('/Weather', weatherRouter);
-app.use('/Resources', resourceRouts);
-app.use('/Volunteers', volunteerRouts);
-app.use('/users', usersRouter);
-app.use('/usersroles', userrolesRouter);
-app.use('/GardenMembership', GardenMembershipRouter);
-
+app.use('/api', routes);
 
 app.listen(port, async () => {
     console.log(`App listening on port ${port} ...`);

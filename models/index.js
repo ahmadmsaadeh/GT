@@ -28,10 +28,10 @@ CropSchedule.belongsTo(Crop, { foreignKey: 'crop_id' });
 KnowledgeBase.belongsTo(User, { foreignKey: 'contributor_id' });
 User.hasMany(KnowledgeBase, { foreignKey: 'contributor_id' });
 
-// Sync database
-sequelize.sync({ alter: true }).then(() => {
-  console.log('Database & tables created!');
-});
+// // Sync database
+// sequelize.sync({ alter: true }).then(() => {
+//   console.log('Database & tables created!');
+// });
 
 module.exports = {
   User,
