@@ -1,21 +1,25 @@
 const express = require('express');
+const router = express.Router();
 
-const resourceRouts = require('./routes/resourcesRouts');
-const volunteerRouts = require('./routes/volunteersRouts');
-const weatherRouter = require('./routes/weatherRouter');
-const usersRouter = require('./routes/users');
-const userrolesRouter = require('./routes/usersroles');
-const gardenMembershipRoutes = require('./routes/gardenMembershipRoutes');
-const LocalPartnershipRoutes = require('./routes/LocalPartnershipRoutes');
-const KnowledgeBaseRoutes = require('./routes/KnowledgeBaseRoutes');
-const soilAndCropRoutes = require('./routes/soilAndCropRoutes');
+const resourceRouts = require('./resourcesRouts');
+const volunteerRouts = require('./volunteersRouts');
+const weatherRouter = require('./weatherRouter');
+const usersRouter = require('./users');
+const userrolesRouter = require('./usersroles');
+const gardenMembershipRoutes = require('./gardenMembershipRoutes');
+const LocalPartnershipRoutes = require('./LocalPartnershipRoutes');
+const KnowledgeBaseRoutes = require('./KnowledgeBaseRoutes');
+const soilAndCropRoutes = require('./soilAndCropRoutes');
 
-app.use('/api/Weather', weatherRouter);
-app.use('/api/Resources', resourceRouts);
-app.use('/api/Volunteers', volunteerRouts);
-app.use('/api/users', usersRouter);
-app.use('/api/usersroles', userrolesRouter);
-app.use('/api/gardenMembership', gardenMembershipRoutes);
-app.use('/api', LocalPartnershipRoutes);
-app.use('/api', KnowledgeBaseRoutes);
-app.use('/api', soilAndCropRoutes);
+
+router.use('/Weather', weatherRouter);
+router.use('/Resources', resourceRouts);
+router.use('/Volunteers', volunteerRouts);
+router.use('/users', usersRouter);
+router.use('/userroles', userrolesRouter);
+router.use('/gardenMembership', gardenMembershipRoutes);
+router.use('/LocalPartnership', LocalPartnershipRoutes);
+router.use('/KnowledgeBase', KnowledgeBaseRoutes);
+router.use('/SoilAndCrop', soilAndCropRoutes);
+
+module.exports = router;
