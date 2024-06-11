@@ -1,4 +1,3 @@
-// routes/LocalPartnershipRoutes.js
 const express = require('express');
 const router = express.Router();
 const LocalPartnershipController = require('../controllers/LocalPartnershipController');

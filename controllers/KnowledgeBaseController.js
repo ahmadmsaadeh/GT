@@ -1,4 +1,3 @@
-// controllers/KnowledgeBaseController.js
 const KnowledgeBase = require('../models/KnowledgeBase');
 
 exports.getAllKnowledgeBases = async (req, res) => {

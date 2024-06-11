@@ -1,4 +1,3 @@
-// controllers/LocalPartnershipController.js
 const LocalPartnership = require('../models/LocalPartnership');
 
 exports.getAllLocalPartnership = async (req, res) => {
