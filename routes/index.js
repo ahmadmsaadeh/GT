@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 
+//this is comment
 const resourceRouts = require('./resourcesRouts');
 const volunteerRouts = require('./volunteersRouts');
 const weatherRouter = require('./weatherRouter');
@@ -10,7 +11,9 @@ const gardenMembershipRoutes = require('./gardenMembershipRoutes');
 const LocalPartnershipRoutes = require('./LocalPartnershipRoutes');
 const KnowledgeBaseRoutes = require('./KnowledgeBaseRoutes');
 const soilAndCropRoutes = require('./soilAndCropRoutes');
-
+const cropRoutes = require('./cropRoutes');
+const cropScheduleRoutes = require('./cropScheduleRoutes');
+const gardenRoutes = require('./gardenRoutes');
 
 router.use('/Weather', weatherRouter);
 router.use('/Resources', resourceRouts);
@@ -21,5 +24,8 @@ router.use('/gardenMembership', gardenMembershipRoutes);
 router.use('/LocalPartnership', LocalPartnershipRoutes);
 router.use('/KnowledgeBase', KnowledgeBaseRoutes);
 router.use('/SoilAndCrop', soilAndCropRoutes);
+router.use('/Crop', cropRoutes);
+router.use('/CropSchedule', cropScheduleRoutes);
+router.use('/garden', gardenRoutes);
 
 module.exports = router;
