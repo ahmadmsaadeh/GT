@@ -1,14 +1,19 @@
 const express = require('express');
-const { getAllResources, getResourceByID } = require('./controllers/resourceController');
+const sequelize = require('./database');
+const models = require('./models');
+const resourceRouts = require('./routs/resourcesRouts');
+const volunteerRouts = require('./routs/volunteersRouts');
+const weatherRouter = require('./routs/weatherRouter');
+const usersRouter = require('./routs/users');
+const userrolesRouter = require('./routs/usersroles');
+const GardenMembershipRouter = require('./routs/GardenMembership');
 const { getAllKnowledgeBases, getKnowledgeBasesById, addKnowledgeBases, DeleteKnowledge, UpdateKnowledge } = require('./controllers/knowledgebasesController');
 const { getAllLocalPartnership, getPartnershipById, addPartnership, DeletePartnership, UpdatePartnership } = require('./controllers/localpartnershipsController');
 const { getGardenSoilData } = require('./controllers/SoilAndPestMgmt');
-const sequelize = require('./database');
-const { User, Resource } = require('./models');
+
 
 const app = express();
 const port = 3000;
-app.use(express.json());
 
 // Middleware to add request time
 app.use((req, res, next) => {
@@ -16,10 +21,13 @@ app.use((req, res, next) => {
     next();
 });
 
+// Middleware to parse JSON bodies
+app.use(express.json());
+
 // Route to get all users
 app.get('/', async (req, res) => {
     try {
-        const users = await User.findAll();
+        const users = await models.User.findAll();
         res.json(users);
     } catch (error) {
         console.error("Error fetching users:", error);
@@ -27,10 +35,14 @@ app.get('/', async (req, res) => {
     }
 });
 
-// Routes for resources
-app.get('/Resources', getAllResources);
-app.get('/Resources/:id', getResourceByID);
-//////////////////////////////////////////////////////////
+
+app.use('/Weather', weatherRouter);
+app.use('/Resources', resourceRouts);
+app.use('/Volunteers', volunteerRouts);
+app.use('/users', usersRouter);
+app.use('/usersroles', userrolesRouter);
+app.use('/GardenMembership', GardenMembershipRouter);
+///////////////////////////////////////////////////////////////
 app.get('/KnowledgeBases', getAllKnowledgeBases);
 app.get('/KnowledgeBasesById', getKnowledgeBasesById);
 app.post('/AddKnowledge', addKnowledgeBases);
@@ -45,11 +57,16 @@ app.post('/UpdatePartnership', UpdatePartnership);
 /////////////////////////////////////////////////////////
 app.get('/getGardenSoilData', getGardenSoilData);
 
+
 app.listen(port, async () => {
     console.log(`App listening on port ${port} ...`);
     try {
         await sequelize.authenticate();
         console.log('Database connection has been established successfully.');
+
+        // Synchronize models with the database without dropping tables
+        await sequelize.sync({ alter: true });
+        console.log('Database synchronized successfully.');
     } catch (error) {
         console.error('Unable to connect to the database:', error);
     }

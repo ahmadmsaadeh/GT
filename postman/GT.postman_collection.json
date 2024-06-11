@@ -1,0 +1,261 @@
+{
+	"info": {
+		"_postman_id": "dbd8cc42-d82b-495d-9faa-3013986033fc",
+		"name": "GT",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "34267230",
+		"_collection_link": "https://www.postman.com/telecoms-astronomer-1362714/workspace/hireme/collection/34267230-dbd8cc42-d82b-495d-9faa-3013986033fc?action=share&source=collection_link&creator=34267230"
+	},
+	"item": [
+		{
+			"name": "KnowledgeBases",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/KnowledgeBases",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"KnowledgeBases"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getKnowledgeById",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\":11\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/KnowledgeBasesById",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"KnowledgeBasesById"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AddKnowledge",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\":\"Knowledge4\",\r\n    \"content\":\"test3.test3.test3.test3.test3.test3.test3.\",\r\n    \"contributor_id\":\"1\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/AddKnowledge",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"AddKnowledge"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeleteKnowledge",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\":11\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/DeleteKnowledge",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"DeleteKnowledge"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateKnowledge",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\":11,\r\n    \"content\":\"newtestcontent3\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/UpdateKnowledge",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"UpdateKnowledge"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "LocalPartnerships",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/LocalPartnerships",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"LocalPartnerships"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PartnershipById",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\":1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/PartnershipById",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"PartnershipById"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AddPartnership",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"Partnership1\",\r\n    \"type\":\"testType\",\r\n    \"contact\":\"test\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/AddPartnership",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"AddPartnership"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeletePartnership",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "UpdatePartnership",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "getGardenSoilData",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"gardenId\": 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/getGardenSoilData",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"getGardenSoilData"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

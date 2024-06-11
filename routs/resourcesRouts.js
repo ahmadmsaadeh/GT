@@ -3,4 +3,15 @@ const resourceController = require('../controllers/resourceController');
 
 const router = express.Router();
 
-router.param('id', resourceController.checkID);
+router
+.route('/')
+.get(resourceController.getAllResources)
+.post(resourceController.addNewResource);
+
+router
+.route('/:id')
+.get(resourceController.getResourceByID)
+.delete(resourceController.deleteResource)
+.patch(resourceController.updateResourceByID);
+
+module.exports = router;

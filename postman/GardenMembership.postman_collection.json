@@ -1,0 +1,203 @@
+{
+	"info": {
+		"_postman_id": "be2e4901-bf3e-4d69-933c-d48e6c421b4a",
+		"name": "GardenMembership",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "35316960"
+	},
+	"item": [
+		{
+			"name": "get all",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/GardenMembership",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"GardenMembership"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get by id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/GardenMembership/3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"GardenMembership",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get by user id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/GardenMembership/user_id/5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"GardenMembership",
+						"user_id",
+						"5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get by garden",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/GardenMembership/garden_id/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"GardenMembership",
+						"garden_id",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete by user id and garden id",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/GardenMembership/user_id/6/garden_id/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"GardenMembership",
+						"user_id",
+						"6",
+						"garden_id",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update garden id",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\r\n       \r\n        \"garden_id\": 2\r\n        \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/GardenMembership/garden_id/3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"GardenMembership",
+						"garden_id",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update user id",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\r\n       \r\n        \"user_id\": 6\r\n        \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/GardenMembership/user_id/3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"GardenMembership",
+						"user_id",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "insert GardenMembership",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \r\n    \"user_id\": \"5\",\r\n    \"garden_id\": \"2\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/GardenMembership/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"GardenMembership",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
