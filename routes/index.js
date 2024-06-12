@@ -5,8 +5,8 @@ const router = express.Router();
 const resourceRouts = require('./resourcesRouts');
 const volunteerRouts = require('./volunteersRouts');
 const weatherRouter = require('./weatherRouter');
-const usersRouter = require('./users');
-const userrolesRouter = require('./usersroles');
+const usersRouter = require('./userRoutes');
+const userrolesRouter = require('./userRoleRoutes');
 const gardenMembershipRoutes = require('./gardenMembershipRoutes');
 const LocalPartnershipRoutes = require('./LocalPartnershipRoutes');
 const KnowledgeBaseRoutes = require('./KnowledgeBaseRoutes');
@@ -14,7 +14,10 @@ const soilAndCropRoutes = require('./soilAndCropRoutes');
 const cropRoutes = require('./cropRoutes');
 const cropScheduleRoutes = require('./cropScheduleRoutes');
 const gardenRoutes = require('./gardenRoutes');
+const authRoutes = require('./authRoutes');
 
+
+router.use('/auth', authRoutes);
 router.use('/Weather', weatherRouter);
 router.use('/Resources', resourceRouts);
 router.use('/Volunteers', volunteerRouts);
