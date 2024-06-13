@@ -77,7 +77,7 @@ Run collection tests individually or perform a collection run to test various AP
 ## Getting Started
 To get started with GreenThumb API, follow these steps:
 - Clone the repository:
-git clone `https://github.com/yourusername/GreenThumb.git`
+git clone `https://github.com/ahmadmsaadeh/GT.git`
 - Install dependencies:`npm install`
 - Configure environment variables.
 - Setup the database using mysql ( sql code is inside database folder ).
