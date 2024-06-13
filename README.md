@@ -15,7 +15,7 @@ GreenThumb is a backend API designed to promote urban gardening, sustainable liv
 - [Technologies Used](#technologies-used)
 - [Contributing](#contributing)
 - [License](#license)
-- [Contact](#contact)
+- [Testing](#Testing)
 
 ## Project Aim
 
@@ -45,7 +45,6 @@ The aim of GreenThumb is to develop a robust backend API that facilitates:
 6. **Local Partnership Integration:** 
    - Integration with local nurseries, farms, and organizations to promote their products, services, and events.
 
-## Getting Started
 
 
 ## External API Integration
@@ -65,6 +64,23 @@ The aim of GreenThumb is to develop a robust backend API that facilitates:
 - **Database:** MySQL: Database for CRUD operations.
 - **Postman:** API building, testing and documentation tool.
 - **Version Control:** Git: Version control system.
+  
+## Testing
+-**Postman** Testing Strategy
+We have employed Postman for comprehensive API testing to ensure the functionality, reliability, and accuracy of the Greenthumb platform. Our testing strategy involves:
+
+-**Automated Tests:** Writing automated test scripts within Postman to perform API endpoint testing, covering scenarios for data submission.
+
+**Environment Setup:** Configuring different environments within Postman to simulate various conditions and perform thorough testing.
+
+**Collection Runs:** Executing collection runs in Postman to validate endpoints, data validations, authentication mechanisms, and error handling.
+
+**Instructions for Testing Using Postman**:
+
+Import the provided Postman collection.
+Set up the necessary environment variables, choose the Postman file.
+Run collection tests individually or perform a collection run to test various API endpoints.
+
 
 
 
