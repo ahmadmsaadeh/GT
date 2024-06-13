@@ -8,12 +8,13 @@ GreenThumb is a backend API designed to promote urban gardening, sustainable liv
 
 - [Project Aim](#project-aim)
 - [Core Features](#core-features)
-- [Getting Started](#getting-started)
 - [API Documentation](#api-documentation)
 - [External API Integration](#external-api-integration)
 - [Project Planning and Version Control](#project-planning-and-version-control)
 - [Technologies Used](#technologies-used)
 - [Testing](#Testing)
+- [Getting Started](#getting-started)
+- [Demo](#Demo)
 
 ## Project Aim
 
@@ -79,6 +80,8 @@ Import the provided Postman collection.
 Set up the necessary environment variables, choose the Postman file.
 Run collection tests individually or perform a collection run to test various API endpoints.
 
+## Demo
+click on the following link to watch the testing demo video.
 
 
 
