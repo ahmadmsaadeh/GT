@@ -6,6 +6,7 @@ GreenThumb is a backend API designed to promote urban gardening, sustainable liv
 
 ## Table of Contents
 
+- [Introdaction](#project-introdaction)
 - [Project Aim](#project-aim)
 - [Core Features](#core-features)
 - [API Documentation](#api-documentation)
@@ -14,6 +15,9 @@ GreenThumb is a backend API designed to promote urban gardening, sustainable liv
 - [Testing](#Testing)
 - [Getting Started](#getting-started)
 
+## Introdaction 
+
+Welcome to GreenThumb, an API designed to empower urban gardening and promote sustainable living. GreenThumb provides a robust backend for a platform that serves as a hub for individuals, communities, and organizations involved in urban gardening and sustainable practices. Our goal is to facilitate collaboration, knowledge sharing, and resource access to help people grow their own food, reduce waste, and live more sustainably.
 
 ## Project Aim
 
