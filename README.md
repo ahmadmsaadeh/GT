@@ -57,7 +57,7 @@ The aim of GreenThumb is to develop a robust backend API that facilitates:
 
 - **Version Control:** Managed using Git with a `main` branch and multiple development branches.
 - **Workflow:** Utilize pull requests for merging changes into the `main` branch to facilitate discussion and review.
-- **Issue Tracking:** Track project tasks and issues using GitHub Issues.
+
 
 ## Technologies Used
 
