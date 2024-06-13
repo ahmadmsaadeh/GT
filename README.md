@@ -63,9 +63,9 @@ We have employed Postman for comprehensive API testing to ensure the functionali
 
 -**Automated Tests:** Writing automated test scripts within Postman to perform API endpoint testing, covering scenarios for data submission.
 
-**Environment Setup:** Configuring different environments within Postman to simulate various conditions and perform thorough testing.
+-**Environment Setup:** Configuring different environments within Postman to simulate various conditions and perform thorough testing.
 
-**Collection Runs:** Executing collection runs in Postman to validate endpoints, data validations, authentication mechanisms, and error handling.
+-**Collection Runs:** Executing collection runs in Postman to validate endpoints, data validations, authentication mechanisms, and error handling.
 
 **Instructions for Testing Using Postman**:
 
