@@ -43,7 +43,8 @@ The aim of GreenThumb is to develop a robust backend API that facilitates:
 6. **Local Partnership Integration:** 
    - Integration with local nurseries, farms, and organizations to promote their products, services, and events.
 
-
+## API Documentation
+The API is fully documented using Postman. Access the documentation here.
 
 ## External API Integration
 
