@@ -13,7 +13,7 @@ GreenThumb is a backend API designed to promote urban gardening, sustainable liv
 - [Technologies Used](#technologies-used)
 - [Testing](#Testing)
 - [Getting Started](#getting-started)
-- [Demo](#Demo)
+
 
 ## Project Aim
 
@@ -82,11 +82,6 @@ git clone `https://github.com/yourusername/GreenThumb.git`
 - Configure environment variables.
 - Setup the database using mysql ( sql code is inside database folder ).
 - Run the application: `npm start`
-
-
-
-## Demo
-click on the following link to watch the testing demo video.
 
 
 
