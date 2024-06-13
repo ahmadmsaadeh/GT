@@ -94,22 +94,3 @@ git clone `https://github.com/ahmadmsaadeh/GT.git`
 
 At GreenThumb, our vision is to transform urban environments into thriving, sustainable ecosystems by empowering communities to engage in urban gardening and sustainable living practices. We believe that by fostering collaboration, sharing knowledge, and providing access to essential resources, we can make a significant impact on the way people interact with their urban surroundings.
 
-
-# Total file count
-find . -type f | wc -l
-
-# Count of JavaScript files
-find . -type f -name "*.js" | wc -l
-
-# Count of JSON files
-find . -type f -name "*.json" | wc -l
-
-# Count of Markdown files
-find . -type f -name "*.md" | wc -l
-
-# Count of SQL files
-find . -type f -name "*.sql" | wc -l
-
-# Count of other files
-find . -type f ! -name "*.js" ! -name "*.json" ! -name "*.md" ! -name "*.sql" | wc -l
-
