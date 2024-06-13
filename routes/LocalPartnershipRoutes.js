@@ -5,7 +5,7 @@ const LocalPartnershipController = require('../controllers/LocalPartnershipContr
 router.get('/LocalPartnerships', LocalPartnershipController.getAllLocalPartnership);
 router.get('/PartnershipById', LocalPartnershipController.getPartnershipById);
 router.post('/AddPartnership', LocalPartnershipController.addPartnership);
-router.post('/DeletePartnership', LocalPartnershipController.deletePartnership);
-router.post('/UpdatePartnership', LocalPartnershipController.updatePartnership);
+router.delete('/DeletePartnership', LocalPartnershipController.deletePartnership);
+router.patch('/UpdatePartnership', LocalPartnershipController.updatePartnership);
 
 module.exports = router;
