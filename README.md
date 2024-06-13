@@ -10,7 +10,6 @@ GreenThumb is a backend API designed to promote urban gardening, sustainable liv
 - [Core Features](#core-features)
 - [API Documentation](#api-documentation)
 - [External API Integration](#external-api-integration)
-- [Project Planning and Version Control](#project-planning-and-version-control)
 - [Technologies Used](#technologies-used)
 - [Testing](#Testing)
 - [Getting Started](#getting-started)
@@ -50,12 +49,6 @@ The aim of GreenThumb is to develop a robust backend API that facilitates:
 
 - **Weather and Climate Data:** Integration with weather APIs to provide accurate local climate data.
 - **Soil and Pest Management Resources:** Connection with authoritative sources for soil analysis data, pest identification, and organic pest control methods.
-
-## Project Planning and Version Control
-
-- **Version Control:** Managed using Git with a `main` branch and multiple development branches.
-- **Workflow:** Utilize pull requests for merging changes into the `main` branch to facilitate discussion and review.
-
 
 ## Technologies Used
 
