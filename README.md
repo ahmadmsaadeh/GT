@@ -1,7 +1,3 @@
-A well-crafted README file is crucial for your project's GitHub repository as it provides a comprehensive overview and instructions for users and contributors. Here's a template for your GreenThumb project README:
-
----
-
 # GreenThumb - Empowering Urban Gardening and Sustainable Living
 
 ## Overview
