@@ -47,50 +47,6 @@ The aim of GreenThumb is to develop a robust backend API that facilitates:
 
 ## Getting Started
 
-### Prerequisites
-
-- Node.js
-- MySQL
-
-### Installation
-
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/yourusername/greenthumb.git
-   cd greenthumb
-   ```
-
-2. Install dependencies:
-   ```bash
-   npm install
-   ```
-
-3. Set up the MySQL database:
-   - Create a database named `greenthumb`.
-   - Import the provided SQL schema: `schema.sql`.
-
-4. Configure the database connection in `config.js`:
-   ```javascript
-   module.exports = {
-     host: 'localhost',
-     user: 'root',
-     password: 'yourpassword',
-     database: 'greenthumb'
-   };
-   ```
-
-5. Start the server:
-   ```bash
-   npm start
-   ```
-
-## API Documentation
-
-The API is documented using Swagger. Access the Swagger UI for detailed API documentation and testing:
-
-```
-http://localhost:3000/api-docs
-```
 
 ## External API Integration
 
@@ -105,36 +61,12 @@ http://localhost:3000/api-docs
 
 ## Technologies Used
 
-- **Backend:** Node.js, Express.js
-- **Database:** MySQL
-- **API Documentation:** Swagger
-- **Version Control:** Git
+- **Backend:** Node.js: Backend development platform, Express.js
+- **Database:** MySQL: Database for CRUD operations.
+- **Postman:** API building, testing and documentation tool.
+- **Version Control:** Git: Version control system.
 
-## Contributing
 
-### How to Contribute
 
-1. Fork the repository.
-2. Create a new branch for your feature or bugfix.
-3. Commit your changes and push the branch.
-4. Create a pull request with a detailed description of your changes.
 
-### Code of Conduct
 
-- Be respectful and inclusive.
-- Follow the project's coding standards.
-- Provide constructive feedback in reviews.
-
-## License
-
-This project is licensed under the MIT License. See the `LICENSE` file for details.
-
-## Contact
-
-- **General Inquiries:** info@communitygardenapi.com
-- **Support:** support@communitygardenapi.com
-- **Partnerships:** partnerships@communitygardenapi.com
-
----
-
-This README template provides a comprehensive guide to your project, including setup instructions, API documentation access, and contribution guidelines. Adjust the content
